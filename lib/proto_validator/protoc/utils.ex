@@ -44,6 +44,8 @@ defmodule ProtoValidator.Protoc.Utils do
   def get_rule_str(rules) when is_map(rules) do
     rule_str =
       rules
+      # TODO: conditionally leave strict option if the rule is HTTP_HEADER_NAME or HTTP_HEADER_VALUE
+      |> Map.delete(:strict)
       |> Enum.map(fn
         {_k, nil} ->
           nil
