@@ -1,8 +1,6 @@
-Based on: https://github.com/elixir-protobuf/protoc-gen-validate
-
-
 # ProtoValidator
 
+Based on: https://github.com/elixir-protobuf/protoc-gen-validate
 Elixir implementation of https://github.com/envoyproxy/protoc-gen-validate
 
 ## Installation
