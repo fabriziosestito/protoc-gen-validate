@@ -12,7 +12,7 @@ defmodule ProtoValidator.ProtoValidatorBoolTest do
     test "should be invalid when the value is different as the declared const" do
       assert {:error, "Invalid const, value should be true"} =
                ProtoValidator.validate(%BoolTest.Const{
-                const: false
+                 const: false
                })
     end
   end
