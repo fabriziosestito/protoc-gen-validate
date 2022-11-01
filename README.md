@@ -89,7 +89,7 @@ users = %{user | email: "user@example.com"}
 - [ ] Numerics
 - [x] Bools
 - [x] Strings
-- [ ] Bytes
+- [x] Bytes
 - [ ] Enums
 - [ ] Messages
 - [ ] Repeated
