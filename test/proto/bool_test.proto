@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-package bool_test;
-
-import "validate.proto";
-
-message Const { bool const = 1 [ (validate.rules).bool.const = true ]; }
