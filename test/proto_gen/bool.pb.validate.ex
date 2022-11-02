@@ -1,20 +1,20 @@
-defmodule ProtoValidator.Gen.Test.BoolNone do
+defmodule ProtoValidator.Gen.Cases.BoolNone do
   @moduledoc false
-  use ProtoValidator, entity: Test.BoolNone
+  use ProtoValidator, entity: Cases.BoolNone
 
   validate(:val, type: :bool)
 end
 
-defmodule ProtoValidator.Gen.Test.BoolConstTrue do
+defmodule ProtoValidator.Gen.Cases.BoolConstTrue do
   @moduledoc false
-  use ProtoValidator, entity: Test.BoolConstTrue
+  use ProtoValidator, entity: Cases.BoolConstTrue
 
   validate(:val, type: :bool, bool: [const: true])
 end
 
-defmodule ProtoValidator.Gen.Test.BoolConstFalse do
+defmodule ProtoValidator.Gen.Cases.BoolConstFalse do
   @moduledoc false
-  use ProtoValidator, entity: Test.BoolConstFalse
+  use ProtoValidator, entity: Cases.BoolConstFalse
 
   validate(:val, type: :bool, bool: [const: false])
 end

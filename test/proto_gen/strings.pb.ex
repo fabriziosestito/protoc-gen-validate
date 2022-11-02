@@ -1,235 +1,235 @@
-defmodule Test.StringNone do
+defmodule Cases.StringNone do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string
 end
 
-defmodule Test.StringConst do
+defmodule Cases.StringConst do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringIn do
+defmodule Cases.StringIn do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringNotIn do
+defmodule Cases.StringNotIn do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringLen do
+defmodule Cases.StringLen do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringMinLen do
+defmodule Cases.StringMinLen do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringMaxLen do
+defmodule Cases.StringMaxLen do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringMinMaxLen do
+defmodule Cases.StringMinMaxLen do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringEqualMinMaxLen do
+defmodule Cases.StringEqualMinMaxLen do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringLenBytes do
+defmodule Cases.StringLenBytes do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringMinBytes do
+defmodule Cases.StringMinBytes do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringMaxBytes do
+defmodule Cases.StringMaxBytes do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringMinMaxBytes do
+defmodule Cases.StringMinMaxBytes do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringEqualMinMaxBytes do
+defmodule Cases.StringEqualMinMaxBytes do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringPattern do
+defmodule Cases.StringPattern do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringPatternEscapes do
+defmodule Cases.StringPatternEscapes do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringPrefix do
+defmodule Cases.StringPrefix do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringContains do
+defmodule Cases.StringContains do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringNotContains do
+defmodule Cases.StringNotContains do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringSuffix do
+defmodule Cases.StringSuffix do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringEmail do
+defmodule Cases.StringEmail do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringAddress do
+defmodule Cases.StringAddress do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringHostname do
+defmodule Cases.StringHostname do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringIP do
+defmodule Cases.StringIP do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringIPv4 do
+defmodule Cases.StringIPv4 do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringIPv6 do
+defmodule Cases.StringIPv6 do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringURI do
+defmodule Cases.StringURI do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringURIRef do
+defmodule Cases.StringURIRef do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringUUID do
+defmodule Cases.StringUUID do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringHttpHeaderName do
+defmodule Cases.StringHttpHeaderName do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringHttpHeaderValue do
+defmodule Cases.StringHttpHeaderValue do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringValidHeader do
+defmodule Cases.StringValidHeader do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringUUIDIgnore do
+defmodule Cases.StringUUIDIgnore do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 
   field :val, 1, type: :string, deprecated: false
 end
 
-defmodule Test.StringInOneOf do
+defmodule Cases.StringInOneOf do
   @moduledoc false
   use Protobuf, protoc_gen_elixir_version: "0.11.0", syntax: :proto3
 

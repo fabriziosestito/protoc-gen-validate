@@ -1,237 +1,237 @@
-defmodule ProtoValidator.Gen.Test.StringNone do
+defmodule ProtoValidator.Gen.Cases.StringNone do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringNone
+  use ProtoValidator, entity: Cases.StringNone
 
   validate(:val, type: :string)
 end
 
-defmodule ProtoValidator.Gen.Test.StringConst do
+defmodule ProtoValidator.Gen.Cases.StringConst do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringConst
+  use ProtoValidator, entity: Cases.StringConst
 
   validate(:val, type: :string, string: [const: "foo"])
 end
 
-defmodule ProtoValidator.Gen.Test.StringIn do
+defmodule ProtoValidator.Gen.Cases.StringIn do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringIn
+  use ProtoValidator, entity: Cases.StringIn
 
   validate(:val, type: :string, string: [in: ["bar", "baz"]])
 end
 
-defmodule ProtoValidator.Gen.Test.StringNotIn do
+defmodule ProtoValidator.Gen.Cases.StringNotIn do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringNotIn
+  use ProtoValidator, entity: Cases.StringNotIn
 
   validate(:val, type: :string, string: [not_in: ["fizz", "buzz"]])
 end
 
-defmodule ProtoValidator.Gen.Test.StringLen do
+defmodule ProtoValidator.Gen.Cases.StringLen do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringLen
+  use ProtoValidator, entity: Cases.StringLen
 
   validate(:val, type: :string, string: [len: 3])
 end
 
-defmodule ProtoValidator.Gen.Test.StringMinLen do
+defmodule ProtoValidator.Gen.Cases.StringMinLen do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringMinLen
+  use ProtoValidator, entity: Cases.StringMinLen
 
   validate(:val, type: :string, string: [min_len: 3])
 end
 
-defmodule ProtoValidator.Gen.Test.StringMaxLen do
+defmodule ProtoValidator.Gen.Cases.StringMaxLen do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringMaxLen
+  use ProtoValidator, entity: Cases.StringMaxLen
 
   validate(:val, type: :string, string: [max_len: 5])
 end
 
-defmodule ProtoValidator.Gen.Test.StringMinMaxLen do
+defmodule ProtoValidator.Gen.Cases.StringMinMaxLen do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringMinMaxLen
+  use ProtoValidator, entity: Cases.StringMinMaxLen
 
   validate(:val, type: :string, string: [max_len: 5, min_len: 3])
 end
 
-defmodule ProtoValidator.Gen.Test.StringEqualMinMaxLen do
+defmodule ProtoValidator.Gen.Cases.StringEqualMinMaxLen do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringEqualMinMaxLen
+  use ProtoValidator, entity: Cases.StringEqualMinMaxLen
 
   validate(:val, type: :string, string: [max_len: 5, min_len: 5])
 end
 
-defmodule ProtoValidator.Gen.Test.StringLenBytes do
+defmodule ProtoValidator.Gen.Cases.StringLenBytes do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringLenBytes
+  use ProtoValidator, entity: Cases.StringLenBytes
 
   validate(:val, type: :string, string: [len_bytes: 4])
 end
 
-defmodule ProtoValidator.Gen.Test.StringMinBytes do
+defmodule ProtoValidator.Gen.Cases.StringMinBytes do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringMinBytes
+  use ProtoValidator, entity: Cases.StringMinBytes
 
   validate(:val, type: :string, string: [min_bytes: 4])
 end
 
-defmodule ProtoValidator.Gen.Test.StringMaxBytes do
+defmodule ProtoValidator.Gen.Cases.StringMaxBytes do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringMaxBytes
+  use ProtoValidator, entity: Cases.StringMaxBytes
 
   validate(:val, type: :string, string: [max_bytes: 8])
 end
 
-defmodule ProtoValidator.Gen.Test.StringMinMaxBytes do
+defmodule ProtoValidator.Gen.Cases.StringMinMaxBytes do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringMinMaxBytes
+  use ProtoValidator, entity: Cases.StringMinMaxBytes
 
   validate(:val, type: :string, string: [max_bytes: 8, min_bytes: 4])
 end
 
-defmodule ProtoValidator.Gen.Test.StringEqualMinMaxBytes do
+defmodule ProtoValidator.Gen.Cases.StringEqualMinMaxBytes do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringEqualMinMaxBytes
+  use ProtoValidator, entity: Cases.StringEqualMinMaxBytes
 
   validate(:val, type: :string, string: [max_bytes: 8, min_bytes: 4])
 end
 
-defmodule ProtoValidator.Gen.Test.StringPattern do
+defmodule ProtoValidator.Gen.Cases.StringPattern do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringPattern
+  use ProtoValidator, entity: Cases.StringPattern
 
   validate(:val, type: :string, string: [pattern: "(?i)^[a-z0-9]+$"])
 end
 
-defmodule ProtoValidator.Gen.Test.StringPatternEscapes do
+defmodule ProtoValidator.Gen.Cases.StringPatternEscapes do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringPatternEscapes
+  use ProtoValidator, entity: Cases.StringPatternEscapes
 
   validate(:val, type: :string, string: [pattern: "\\* \\\\ \\w"])
 end
 
-defmodule ProtoValidator.Gen.Test.StringPrefix do
+defmodule ProtoValidator.Gen.Cases.StringPrefix do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringPrefix
+  use ProtoValidator, entity: Cases.StringPrefix
 
   validate(:val, type: :string, string: [prefix: "foo"])
 end
 
-defmodule ProtoValidator.Gen.Test.StringContains do
+defmodule ProtoValidator.Gen.Cases.StringContains do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringContains
+  use ProtoValidator, entity: Cases.StringContains
 
   validate(:val, type: :string, string: [contains: "bar"])
 end
 
-defmodule ProtoValidator.Gen.Test.StringNotContains do
+defmodule ProtoValidator.Gen.Cases.StringNotContains do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringNotContains
+  use ProtoValidator, entity: Cases.StringNotContains
 
   validate(:val, type: :string, string: [not_contains: "bar"])
 end
 
-defmodule ProtoValidator.Gen.Test.StringSuffix do
+defmodule ProtoValidator.Gen.Cases.StringSuffix do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringSuffix
+  use ProtoValidator, entity: Cases.StringSuffix
 
   validate(:val, type: :string, string: [suffix: "baz"])
 end
 
-defmodule ProtoValidator.Gen.Test.StringEmail do
+defmodule ProtoValidator.Gen.Cases.StringEmail do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringEmail
+  use ProtoValidator, entity: Cases.StringEmail
 
   validate(:val, type: :string, string: [well_known: [email: true]])
 end
 
-defmodule ProtoValidator.Gen.Test.StringAddress do
+defmodule ProtoValidator.Gen.Cases.StringAddress do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringAddress
+  use ProtoValidator, entity: Cases.StringAddress
 
   validate(:val, type: :string, string: [well_known: [address: true]])
 end
 
-defmodule ProtoValidator.Gen.Test.StringHostname do
+defmodule ProtoValidator.Gen.Cases.StringHostname do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringHostname
+  use ProtoValidator, entity: Cases.StringHostname
 
   validate(:val, type: :string, string: [well_known: [hostname: true]])
 end
 
-defmodule ProtoValidator.Gen.Test.StringIP do
+defmodule ProtoValidator.Gen.Cases.StringIP do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringIP
+  use ProtoValidator, entity: Cases.StringIP
 
   validate(:val, type: :string, string: [well_known: [ip: true]])
 end
 
-defmodule ProtoValidator.Gen.Test.StringIPv4 do
+defmodule ProtoValidator.Gen.Cases.StringIPv4 do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringIPv4
+  use ProtoValidator, entity: Cases.StringIPv4
 
   validate(:val, type: :string, string: [well_known: [ipv4: true]])
 end
 
-defmodule ProtoValidator.Gen.Test.StringIPv6 do
+defmodule ProtoValidator.Gen.Cases.StringIPv6 do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringIPv6
+  use ProtoValidator, entity: Cases.StringIPv6
 
   validate(:val, type: :string, string: [well_known: [ipv6: true]])
 end
 
-defmodule ProtoValidator.Gen.Test.StringURI do
+defmodule ProtoValidator.Gen.Cases.StringURI do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringURI
+  use ProtoValidator, entity: Cases.StringURI
 
   validate(:val, type: :string, string: [well_known: [uri: true]])
 end
 
-defmodule ProtoValidator.Gen.Test.StringURIRef do
+defmodule ProtoValidator.Gen.Cases.StringURIRef do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringURIRef
+  use ProtoValidator, entity: Cases.StringURIRef
 
   validate(:val, type: :string, string: [well_known: [uri_ref: true]])
 end
 
-defmodule ProtoValidator.Gen.Test.StringUUID do
+defmodule ProtoValidator.Gen.Cases.StringUUID do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringUUID
+  use ProtoValidator, entity: Cases.StringUUID
 
   validate(:val, type: :string, string: [well_known: [uuid: true]])
 end
 
-defmodule ProtoValidator.Gen.Test.StringHttpHeaderName do
+defmodule ProtoValidator.Gen.Cases.StringHttpHeaderName do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringHttpHeaderName
+  use ProtoValidator, entity: Cases.StringHttpHeaderName
 
   validate(:val, type: :string, string: [well_known: [well_known_regex: [HTTP_HEADER_NAME]]])
 end
 
-defmodule ProtoValidator.Gen.Test.StringHttpHeaderValue do
+defmodule ProtoValidator.Gen.Cases.StringHttpHeaderValue do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringHttpHeaderValue
+  use ProtoValidator, entity: Cases.StringHttpHeaderValue
 
   validate(:val, type: :string, string: [well_known: [well_known_regex: [HTTP_HEADER_VALUE]]])
 end
 
-defmodule ProtoValidator.Gen.Test.StringValidHeader do
+defmodule ProtoValidator.Gen.Cases.StringValidHeader do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringValidHeader
+  use ProtoValidator, entity: Cases.StringValidHeader
 
   validate(:val, type: :string, string: [well_known: [well_known_regex: [HTTP_HEADER_VALUE]]])
 end
 
-defmodule ProtoValidator.Gen.Test.StringUUIDIgnore do
+defmodule ProtoValidator.Gen.Cases.StringUUIDIgnore do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringUUIDIgnore
+  use ProtoValidator, entity: Cases.StringUUIDIgnore
 
   validate(:val, type: :string, string: [ignore_empty: true, well_known: [uuid: true]])
 end
 
-defmodule ProtoValidator.Gen.Test.StringInOneOf do
+defmodule ProtoValidator.Gen.Cases.StringInOneOf do
   @moduledoc false
-  use ProtoValidator, entity: Test.StringInOneOf
+  use ProtoValidator, entity: Cases.StringInOneOf
 
   validate(:bar, type: :string, string: [in: ["a", "b"]])
 end
