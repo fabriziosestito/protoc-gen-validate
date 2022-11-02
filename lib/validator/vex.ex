@@ -204,6 +204,10 @@ defmodule ProtoValidator.Validator.Vex do
     {Vex.Validators.Inclusion, [in: v, message: "value should be oneof #{inspect(v)}"]}
   end
 
+  defp translate_rule({:string, {:not_in, v}}, _context) do
+    {Vex.Validators.Exclusion, [in: v, message: "value should be oneof #{inspect(v)}"]}
+  end
+
   defp translate_rule(_, _) do
     nil
   end
