@@ -21,7 +21,7 @@ defmodule ProtoValidator.MixProject do
     ]
   end
 
-  defp elixirc_paths(:test), do: ["lib", "test/proto_gen"]
+  defp elixirc_paths(:test), do: ["lib", "test/proto_gen", "test/support"]
   defp elixirc_paths(_), do: ["lib"]
 
   defp escript do
