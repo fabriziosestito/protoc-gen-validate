@@ -1,5 +1,0 @@
-syntax = "proto3";
-
-package bool_test;
-
-import "validate.proto";
