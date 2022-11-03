@@ -3,7 +3,6 @@ defmodule ProtoValidator.Validator.Vex do
 
   alias ProtoValidator.Validator.Vex.{
     Contains,
-    IP,
     LenBytes,
     NotContains,
     Prefix,
