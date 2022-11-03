@@ -205,8 +205,9 @@ defmodule ProtoValidator.Validator.Vex do
     {Vex.Validators.Exclusion, [in: v, message: "value should be oneof #{inspect(v)}"]}
   end
 
-  defp translate_rule({:string, {:well_known, {:uuid, true}}}, [{:string, {:ignore_empty, true}} | _]) do
-
+  defp translate_rule({:string, {:well_known, {:uuid, true}}}, [
+         {:string, {:ignore_empty, true}} | _
+       ]) do
     {Vex.Validators.Uuid, [format: :default, allow_blank: true]}
   end
 

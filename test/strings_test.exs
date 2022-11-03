@@ -5,22 +5,17 @@ defmodule ProtoValidator.StringsTest do
 
   @cases [
     {"string - none - valid", %Cases.StringNone{val: "quux"}, true},
-
     {"string - const - valid", %Cases.StringConst{val: "foo"}, true},
     {"string - const - invalid", %Cases.StringConst{val: "bar"}, false},
-
     {"string - in - valid", %Cases.StringIn{val: "bar"}, true},
     {"string - in - invalid", %Cases.StringIn{val: "quux"}, false},
-
     {"string - not in - valid", %Cases.StringNotIn{val: "quux"}, true},
     {"string - not in - invalid", %Cases.StringNotIn{val: "fizz"}, false},
-
     {"string - len - valid", %Cases.StringLen{val: "baz"}, true},
     {"string - len - valid (multibyte)", %Cases.StringLen{val: "你好吖"}, true},
     {"string - len - invalid (lt)", %Cases.StringLen{val: "go"}, false},
     {"string - len - invalid (gt)", %Cases.StringLen{val: "fizz"}, false},
     {"string - len - invalid (multibyte)", %Cases.StringLen{val: "你好"}, false},
-
     {"string - min len - valid", %Cases.StringMinLen{val: "protoc"}, true},
     {"string - min len - valid (min)", %Cases.StringMinLen{val: "baz"}, true},
     {"string - min len - invalid", %Cases.StringMinLen{val: "go"}, false},
@@ -29,22 +24,18 @@ defmodule ProtoValidator.StringsTest do
     {"string - max len - valid (max)", %Cases.StringMaxLen{val: "proto"}, true},
     {"string - max len - valid (multibyte)", %Cases.StringMaxLen{val: "你好你好"}, true},
     {"string - max len - invalid", %Cases.StringMaxLen{val: "1234567890"}, false},
-
     {"string - min/max len - valid", %Cases.StringMinMaxLen{val: "quux"}, true},
     {"string - min/max len - valid (min)", %Cases.StringMinMaxLen{val: "foo"}, true},
     {"string - min/max len - valid (max)", %Cases.StringMinMaxLen{val: "proto"}, true},
     {"string - min/max len - valid (multibyte)", %Cases.StringMinMaxLen{val: "你好你好"}, true},
     {"string - min/max len - invalid (below)", %Cases.StringMinMaxLen{val: "go"}, false},
     {"string - min/max len - invalid (above)", %Cases.StringMinMaxLen{val: "validate"}, false},
-
     {"string - equal min/max len - valid", %Cases.StringEqualMinMaxLen{val: "proto"}, true},
     {"string - equal min/max len - invalid", %Cases.StringEqualMinMaxLen{val: "validate"}, false},
-
     {"string - len bytes - valid", %Cases.StringLenBytes{val: "pace"}, true},
     {"string - len bytes - invalid (lt)", %Cases.StringLenBytes{val: "val"}, false},
     {"string - len bytes - invalid (gt)", %Cases.StringLenBytes{val: "world"}, false},
     {"string - len bytes - invalid (multibyte)", %Cases.StringLenBytes{val: "世界和平"}, false},
-
     {"string - min bytes - valid", %Cases.StringMinBytes{val: "proto"}, true},
     {"string - min bytes - valid (min)", %Cases.StringMinBytes{val: "quux"}, true},
     {"string - min bytes - valid (multibyte)", %Cases.StringMinBytes{val: "你好"}, true},
@@ -53,17 +44,14 @@ defmodule ProtoValidator.StringsTest do
     {"string - max bytes - valid (max)", %Cases.StringMaxBytes{val: "12345678"}, true},
     {"string - max bytes - invalid", %Cases.StringMaxBytes{val: "123456789"}, false},
     {"string - max bytes - invalid (multibyte)", %Cases.StringMaxBytes{val: "你好你好你好"}, false},
-
     {"string - min/max bytes - valid", %Cases.StringMinMaxBytes{val: "protoc"}, true},
     {"string - min/max bytes - valid (min)", %Cases.StringMinMaxBytes{val: "quux"}, true},
     {"string - min/max bytes - valid (max)", %Cases.StringMinMaxBytes{val: "fizzbuzz"}, true},
     {"string - min/max bytes - valid (multibyte)", %Cases.StringMinMaxBytes{val: "你好"}, true},
     {"string - min/max bytes - invalid (below)", %Cases.StringMinMaxBytes{val: "foo"}, false},
     {"string - min/max bytes - invalid (above)", %Cases.StringMinMaxBytes{val: "你好你好你"}, false},
-
     {"string - equal min/max bytes - valid", %Cases.StringEqualMinMaxBytes{val: "protoc"}, true},
     {"string - equal min/max bytes - invalid", %Cases.StringEqualMinMaxBytes{val: "foo"}, false},
-
     {"string - pattern - valid", %Cases.StringPattern{val: "Foo123"}, true},
     {"string - pattern - invalid", %Cases.StringPattern{val: "!@#$%^&*()"}, false},
     {"string - pattern - invalid (empty)", %Cases.StringPattern{val: ""}, false},
@@ -71,29 +59,24 @@ defmodule ProtoValidator.StringsTest do
     {"string - pattern (escapes) - valid", %Cases.StringPatternEscapes{val: "* \\ x"}, true},
     {"string - pattern (escapes) - invalid", %Cases.StringPatternEscapes{val: "invalid"}, false},
     {"string - pattern (escapes) - invalid (empty)", %Cases.StringPatternEscapes{val: ""}, false},
-
     {"string - prefix - valid", %Cases.StringPrefix{val: "foobar"}, true},
     {"string - prefix - valid (only)", %Cases.StringPrefix{val: "foo"}, true},
     {"string - prefix - invalid", %Cases.StringPrefix{val: "bar"}, false},
     {"string - prefix - invalid (case-sensitive)", %Cases.StringPrefix{val: "Foobar"}, false},
-
     {"string - contains - valid", %Cases.StringContains{val: "candy bars"}, true},
     {"string - contains - valid (only)", %Cases.StringContains{val: "bar"}, true},
     {"string - contains - invalid", %Cases.StringContains{val: "candy bazs"}, false},
     {"string - contains - invalid (case-sensitive)", %Cases.StringContains{val: "Candy Bars"},
      false},
-
     {"string - not contains - valid", %Cases.StringNotContains{val: "candy bazs"}, true},
     {"string - not contains - valid (case-sensitive)",
      %Cases.StringNotContains{val: "Candy Bars"}, true},
     {"string - not contains - invalid", %Cases.StringNotContains{val: "candy bars"}, false},
     {"string - not contains - invalid (equal)", %Cases.StringNotContains{val: "bar"}, false},
-
     {"string - suffix - valid", %Cases.StringSuffix{val: "foobaz"}, true},
     {"string - suffix - valid (only)", %Cases.StringSuffix{val: "baz"}, true},
     {"string - suffix - invalid", %Cases.StringSuffix{val: "foobar"}, false},
     {"string - suffix - invalid (case-sensitive)", %Cases.StringSuffix{val: "FooBaz"}, false},
-
     {"string - email - valid", %Cases.StringEmail{val: "foo@bar.com"}, true},
     # {"string - email - valid (name)", %Cases.StringEmail{val: "John Smith <foo@bar.com>"}, true},
     {"string - email - invalid", %Cases.StringEmail{val: "foobar"}, false},
@@ -200,7 +183,7 @@ defmodule ProtoValidator.StringsTest do
     {"string - UUID - invalid", %Cases.StringUUID{val: "foobar"}, false},
     {"string - UUID - invalid (bad UUID)",
      %Cases.StringUUID{val: "ffffffff-ffff-ffff-ffff-fffffffffffff"}, false},
-    {"string - UUID - valid (ignore_empty)", %Cases.StringUUIDIgnore{val: ""}, true},
+    {"string - UUID - valid (ignore_empty)", %Cases.StringUUIDIgnore{val: ""}, true}
 
     # {"string - http header name - valid", %Cases.StringHttpHeaderName{val: "clustername"}, true},
     # {"string - http header name - valid", %Cases.StringHttpHeaderName{val: ":path"}, true},
