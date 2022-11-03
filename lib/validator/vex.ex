@@ -160,10 +160,6 @@ defmodule ProtoValidator.Validator.Vex do
     {:function, {ProtoValidator.Validator, :validate_uniq}}
   end
 
-  defp translate_rule({:string, {:well_known, {:uuid, true}}}, _context) do
-    {Vex.Validators.Uuid, [format: :default]}
-  end
-
   defp translate_rule({:string, {:len, v}}, _context) do
     {Vex.Validators.Length, [is: v, message: "length should be #{v}"]}
   end
@@ -202,6 +198,39 @@ defmodule ProtoValidator.Validator.Vex do
 
   defp translate_rule({:string, {:in, v}}, _context) do
     {Vex.Validators.Inclusion, [in: v, message: "value should be oneof #{inspect(v)}"]}
+  end
+
+  defp translate_rule({:string, {:not_in, v}}, _context) do
+    {Vex.Validators.Exclusion, [in: v, message: "value should be oneof #{inspect(v)}"]}
+  end
+
+  defp translate_rule({:string, {:well_known, {:uuid, true}}}, [
+         {:string, {:ignore_empty, true}} | _
+       ]) do
+    {Vex.Validators.Uuid, [format: :default, allow_blank: true]}
+  end
+
+  defp translate_rule({:string, {:well_known, {:uuid, true}}}, _context) do
+    {Vex.Validators.Uuid, [format: :default]}
+  end
+
+  defp translate_rule({:string, {:well_known, {:email, true}}}, _context) do
+    {Vex.Validators.Format,
+     [
+       # RFC 5322
+       with: ~r/^[\w.!#$%&’*+\-\/=?\^`{|}~]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*$/i,
+       message: "should be a valid email address"
+     ]}
+  end
+
+  defp translate_rule({:string, {:well_known, {:address, true}}}, _context) do
+    {Vex.Validators.Format,
+     [
+       # RFC 1123
+       with:
+         ~r/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$|^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/,
+       message: "should be a valid address"
+     ]}
   end
 
   defp translate_rule(_, _) do
