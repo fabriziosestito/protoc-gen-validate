@@ -32,7 +32,13 @@ defmodule ProtoValidator.Protoc.CLI do
       |> Enum.map(fn desc -> ProtoValidator.Protoc.Generator.generate(ctx, desc) end)
       |> Enum.reject(&is_nil/1)
 
-    response = Google.Protobuf.Compiler.CodeGeneratorResponse.new(file: files)
+    response =
+      Google.Protobuf.Compiler.CodeGeneratorResponse.new(
+        file: files,
+        supported_features:
+          Google.Protobuf.Compiler.CodeGeneratorResponse.Feature.value(:FEATURE_PROTO3_OPTIONAL)
+      )
+
     IO.binwrite(Protobuf.Encoder.encode(response))
   end
 end
